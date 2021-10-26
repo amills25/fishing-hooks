@@ -1,7 +1,9 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
+import { Link } from "react-router-dom";
 
+//pull individual product when added to cart and add it to cart array to display here
 export default function Cart() {
     return (
         <>
@@ -21,7 +23,13 @@ export default function Cart() {
                                     <Card.Text>
                                         Product Description from API
                                     </Card.Text>
-                                    <Button variant="flush">View Item</Button>{" "}
+                                    <Button
+                                        as={Link}
+                                        to="/item"
+                                        variant="flush"
+                                    >
+                                        View Item
+                                    </Button>{" "}
                                     <Button variant="flush">
                                         Remove from Cart
                                     </Button>

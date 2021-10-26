@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
+import { Link } from "react-router-dom";
 
 export default function Catalogue() {
     return (
@@ -25,7 +26,13 @@ export default function Catalogue() {
                                     <Card.Text>
                                         Product Description from API
                                     </Card.Text>
-                                    <Button variant="flush">View Item</Button>{" "}
+                                    <Button
+                                        as={Link}
+                                        to="/item"
+                                        variant="flush"
+                                    >
+                                        View Item
+                                    </Button>{" "}
                                     <Button variant="flush">Add to Cart</Button>
                                 </Card.Body>
                             </Card>

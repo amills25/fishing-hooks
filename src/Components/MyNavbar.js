@@ -6,7 +6,7 @@ export default function MyNavbar() {
     return (
         <Navbar>
             <Container className="bg bg-transparent fw-bold">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={Link} to="/home">
                     <img
                         alt="Cat Steve's Logo"
                         src="./img/CatSteves.png"
@@ -16,9 +16,6 @@ export default function MyNavbar() {
                     />{" "}
                 </Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link activeClassName={"active"} as={Link} to="/">
-                        Home
-                    </Nav.Link>
                     <Nav.Link
                         activeClassName={"active"}
                         as={Link}

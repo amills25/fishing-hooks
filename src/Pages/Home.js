@@ -37,7 +37,9 @@ export default function Home() {
                     />
                     <Carousel.Caption>
                         <h3 className="text-dark">Spinners</h3>
-                        <p className="text-dark">Don't forget your tackle!</p>
+                        <p className="text-dark">
+                            Don't forget your tackle accessories!
+                        </p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
