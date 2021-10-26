@@ -11,10 +11,6 @@ export default function Cart() {
                     {Array.from({ length: 1 }).map((_, idx) => (
                         <Col>
                             <Card>
-                                <Card.Img
-                                    variant="top"
-                                    src="holder.js/100px160"
-                                />
                                 <Card.Body>
                                     <Card.Title>Card title</Card.Title>
                                     <Card.Text>
@@ -24,7 +20,9 @@ export default function Cart() {
                                         little bit longer.
                                     </Card.Text>
                                     <Button variant="flush">View Item</Button>{" "}
-                                    <Button variant="flush">Add to Cart</Button>
+                                    <Button variant="flush">
+                                        Remove from Cart
+                                    </Button>
                                 </Card.Body>
                             </Card>
                         </Col>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function MyNavbar() {
     return (
         <Navbar>
-            <Container className="bg bg-transparent">
+            <Container className="bg bg-transparent fw-bold">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""
@@ -27,10 +27,7 @@ export default function MyNavbar() {
                         Products
                     </Nav.Link>
                     <Nav.Link activeClassName={"active"} as={Link} to="/Cart">
-                        Cart
-                    </Nav.Link>
-                    <Nav.Link activeClassName={"active"} as={Link} to="/Login">
-                        Logout
+                        Cart: 0 Items
                     </Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
@@ -38,6 +35,15 @@ export default function MyNavbar() {
                     <Navbar.Text>
                         Signed in as: <a href="#login">Go Home Keith</a>
                     </Navbar.Text>
+                    <Nav>
+                        <Nav.Link
+                            activeClassName={"active"}
+                            as={Link}
+                            to="/Login"
+                        >
+                            Logout
+                        </Nav.Link>
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

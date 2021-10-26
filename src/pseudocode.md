@@ -29,6 +29,7 @@
 1. A user can see all the products listed on the products page.
 
     - cards on the catalogue page
+    - API call here getting info and plugging it into each item
 
 2. A user can modify the number of items in their cart.
     - a method that adds the count in the navbar

@@ -21,7 +21,7 @@ export default function Home() {
                 <Carousel.Item>
                     <img
                         className="d-block mx-auto h-50 caroPicReel"
-                        src="./img/reel.png"
+                        src="./img/reel2.png"
                         alt="Fishing Reel"
                     />
                     <Carousel.Caption>

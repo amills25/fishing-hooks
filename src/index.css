@@ -1,14 +1,19 @@
 body {
-    background-image: url("./img/lake.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-image: linear-gradient(
+        to left,
+        rgba(118, 149, 252, 0.7),
+        rgb(153, 235, 238)
+    );
 }
 
 .caroPic {
     max-height: 500px;
 }
+
 .caroPicReel {
     max-height: 500px;
     padding-right: 10vw;
