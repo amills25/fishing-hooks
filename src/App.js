@@ -3,23 +3,17 @@ import Home from "../src/Pages/Home";
 import Catalogue from "../src/Pages/Catalogue";
 import ShowItem from "./Pages/ShowItem";
 import Cart from "../src/Pages/Cart";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
-    const [product, setProduct] = useState([
-        {
-            name: "",
-            price: "",
-            description: "",
-        },
-    ]);
+    const [cartArray, setCartArray] = useState([]);
+
+    const [product, setProduct] = useState([]);
+    // const [image, setImage] = useState("image url");
     // const [name, setName] = useState("Bait or Tackle Item");
     // const [price, setPrice] = useState("5");
     // const [description, setDescription] = useState("This item helps me fish");
-
-    // useEffect calling CallAPI function
-
     const callAPI = () => {
         axios
             .get(
@@ -28,6 +22,7 @@ export default function App() {
             .then((response) => {
                 // handle success
                 setProduct(response.data);
+                <Catalogue key={product.data} product={product} />;
                 console.log(response);
             })
             .catch(function (error) {
@@ -35,6 +30,7 @@ export default function App() {
                 console.log(error);
             });
     };
+    useEffect(callAPI, []);
 
     return (
         <Router>

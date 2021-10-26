@@ -51,4 +51,7 @@
 
 4. When the user clicks "add to cart" on a product(s), add it to the cart (A user should be able to add more than 1 item to their cart at a time)
 
+-   Can only view cart if there are items in the cart
+-   Can't remove item from cart if it isn't in cart
+
 -   Shows items in cart array displayed as card

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
 import { Link } from "react-router-dom";
 
-export default function Catalogue() {
+export default function Catalogue(product) {
     return (
         <>
             <MyNavbar />
@@ -12,19 +12,20 @@ export default function Catalogue() {
                     {Array.from({ length: 52 }).map((_, idx) => (
                         <Col>
                             <Card>
-                                {/* <Card.Img
+                                <Card.Img
+                                    key={product.image}
                                     variant="top"
-                                    src="holder.js/100px160"
-                                /> */}
+                                    src={product.image}
+                                />
                                 <Card.Body>
-                                    <Card.Title>
-                                        Product Name from API
+                                    <Card.Title key={product.name}>
+                                        {product.name}
                                     </Card.Title>
-                                    <Card.Subtitle>
-                                        Product Price from API
+                                    <Card.Subtitle key={product.price}>
+                                        {product.price}
                                     </Card.Subtitle>
-                                    <Card.Text>
-                                        Product Description from API
+                                    <Card.Text key={product.description}>
+                                        {product.description}
                                     </Card.Text>
                                     <Button
                                         as={Link}
@@ -33,6 +34,7 @@ export default function Catalogue() {
                                     >
                                         View Item
                                     </Button>{" "}
+                                    {/* onClick={addToCart} */}
                                     <Button variant="flush">Add to Cart</Button>
                                 </Card.Body>
                             </Card>

@@ -30,8 +30,9 @@ export default function MyNavbar() {
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        Signed in as: <a href="#login">Go Home Keith</a>
+                        Welcome, <a href="#login">Andrew Mills</a>
                     </Navbar.Text>
+                    {"||"}
                     <Nav>
                         <Nav.Link
                             activeClassName={"active"}

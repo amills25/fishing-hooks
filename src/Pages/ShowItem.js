@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
 
 //pull individual product when clicked on view item and add it to card to display here
-export default function Cart() {
+export default function Item() {
     return (
         <>
             <MyNavbar />
@@ -22,6 +22,7 @@ export default function Cart() {
                                     <Card.Text>
                                         Product Description from API
                                     </Card.Text>
+                                    {/* onClick={addToCart} */}
                                     <Button variant="flush">Add to Cart</Button>
                                 </Card.Body>
                             </Card>

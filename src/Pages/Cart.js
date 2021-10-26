@@ -30,7 +30,10 @@ export default function Cart() {
                                     >
                                         View Item
                                     </Button>{" "}
-                                    <Button variant="flush">
+                                    <Button
+                                        variant="flush"
+                                        // onClick={removeItem}
+                                    >
                                         Remove from Cart
                                     </Button>
                                 </Card.Body>
