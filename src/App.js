@@ -1,8 +1,7 @@
 import "./App.css";
-import Home from "../Home";
-import Catalogue from "../Catalogue";
+import Home from "../src/Pages/Home";
+import Catalogue from "../src/Pages/Catalogue";
 import React from "react";
-import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
@@ -15,10 +14,13 @@ export default function App() {
                             <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <Link to="/about">Products</Link>
+                            <Link to="/catalogue">Products</Link>
                         </li>
                         <li>
-                            <Link to="/users">Login</Link>
+                            <Link to="/Login">Login</Link>
+                        </li>
+                        <li>
+                            <Link to="/Cart">Cart</Link>
                         </li>
                     </ul>
                 </nav>
@@ -32,6 +34,7 @@ export default function App() {
                         <Catalogue />
                     </Route>
                     <Route path="/login">{/* <Login /> */}</Route>
+                    <Route path="/Cart">{/* <Cart /> */}</Route>
                     <Route path={["/", "*"]}>
                         <Home />
                     </Route>
