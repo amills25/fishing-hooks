@@ -20,13 +20,27 @@
         -   show number of items in cart
     -   LOGIN -keith makes this page
 
-### PRODUCTS PAGE
+### PRODUCTS/CATALOGUE PAGE
 
 -   Do this with others choosing path 1
 
 #### Requirements
 
 1. A user can see all the products listed on the products page.
+
+    - cards on the catalogue page
+
+2. A user can modify the number of items in their cart.
+    - a method that adds the count in the navbar
+
+### PRODUCT PAGE
+
+-   Do this with others choosing path 1
+
 2. A user can see a product page when they click on a product (from the products page or from their cart).
-3. A user can modify the number of items in their cart.
+
+### CART PAGE
+
+-   Do this with others choosing path 1
+
 4. When the user clicks "add to cart" on a product(s), add it to the cart (A user should be able to add more than 1 item to their cart at a time)

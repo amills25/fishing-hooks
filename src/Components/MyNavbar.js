@@ -5,18 +5,16 @@ import { Link } from "react-router-dom";
 export default function MyNavbar() {
     return (
         <Navbar>
-            <Container>
+            <Container className="bg bg-transparent">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""
-                        src="/logo.svg"
-                        width="30"
-                        height="30"
+                        src="./img/CatSteves.png"
+                        width="200"
+                        height="200"
                         className="d-inline-block align-top"
                     />{" "}
-                    React Bootstrap
                 </Navbar.Brand>
-                <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link activeClassName={"active"} as={Link} to="/">
                         Home
@@ -24,18 +22,21 @@ export default function MyNavbar() {
                     <Nav.Link
                         activeClassName={"active"}
                         as={Link}
-                        to="/Products"
+                        to="/catalogue"
                     >
                         Products
                     </Nav.Link>
+                    <Nav.Link activeClassName={"active"} as={Link} to="/Cart">
+                        Cart
+                    </Nav.Link>
                     <Nav.Link activeClassName={"active"} as={Link} to="/Login">
-                        Login
+                        Logout
                     </Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        Signed in as: <a href="#login">Mark Otto</a>
+                        Signed in as: <a href="#login">Go Home Keith</a>
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Container>

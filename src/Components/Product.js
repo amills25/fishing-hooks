@@ -4,5 +4,5 @@ import { Card, Button } from "react-bootstrap";
 import productData from "../data/productData";
 
 export default function Product() {
-    return <div>{/* card here */}</div>;
+    return <div></div>;
 }

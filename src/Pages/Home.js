@@ -1,52 +1,46 @@
 import React from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Image } from "react-bootstrap";
+import MyNavbar from "../Components/MyNavbar";
 
 export default function Home() {
     return (
-        <Carousel>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="./img/rod.jpg"
-                    alt="Fishing Rod"
-                />
-                <Carousel.Caption>
-                    <h3>Rods</h3>
-                    <p>
-                        Nulla vitae elit libero, a pharetra augue mollis
-                        interdum.
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="./img/rod.jpg"
-                    alt="Fishing Reel"
-                />
-
-                <Carousel.Caption>
-                    <h3>Reels</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src="./img/spinner.jpg"
-                    alt="Fishing Spinner"
-                />
-
-                <Carousel.Caption>
-                    <h3>Spinners</h3>
-                    <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl
-                        consectetur.
-                    </p>
-                </Carousel.Caption>
-            </Carousel.Item>
-        </Carousel>
+        <>
+            <MyNavbar />
+            <Carousel>
+                <Carousel.Item>
+                    <img
+                        className="d-block mx-auto caroPic"
+                        src="./img/rod.png"
+                        alt="Fishing Rod"
+                    />
+                    <Carousel.Caption>
+                        <h3 className="text-dark">Rods</h3>
+                        <p className="text-dark">We sell fishing rods!</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block mx-auto h-50 caroPicReel"
+                        src="./img/reel.png"
+                        alt="Fishing Reel"
+                    />
+                    <Carousel.Caption>
+                        <h3 className="text-dark">Reels</h3>
+                        <p className="text-dark">We sell reels too!</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block mx-auto caroPic"
+                        src="./img/spinner.png"
+                        alt="Fishing Spinner"
+                    />
+                    <Carousel.Caption>
+                        <h3 className="text-dark">Spinners</h3>
+                        <p className="text-dark">Don't forget your tackle!</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+        </>
     );
 }

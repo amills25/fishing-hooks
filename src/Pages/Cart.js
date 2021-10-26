@@ -1,15 +1,14 @@
 import React from "react";
-import axios from "axios";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
 
-export default function Catalogue() {
+export default function Cart() {
     return (
         <>
             <MyNavbar />
             <Container>
                 <Row xs={1} md={4} className="g-4">
-                    {Array.from({ length: 52 }).map((_, idx) => (
+                    {Array.from({ length: 1 }).map((_, idx) => (
                         <Col>
                             <Card>
                                 <Card.Img
