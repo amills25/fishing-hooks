@@ -12,12 +12,14 @@ export default function Cart() {
                         <Col>
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>Card title</Card.Title>
+                                    <Card.Title>
+                                        Product Name from API
+                                    </Card.Title>
+                                    <Card.Subtitle>
+                                        Product Price from API
+                                    </Card.Subtitle>
                                     <Card.Text>
-                                        This is a longer card with supporting
-                                        text below as a natural lead-in to
-                                        additional content. This content is a
-                                        little bit longer.
+                                        Product Description from API
                                     </Card.Text>
                                     <Button variant="flush">View Item</Button>{" "}
                                     <Button variant="flush">

@@ -1,27 +1,8 @@
 import React from "react";
-import axios from "axios";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
 
 export default function Catalogue() {
-    // callAPI = () => {
-    //     axios
-    //         .get(
-    //             "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/store/products"
-    //         )
-    //         .then(function (response) {
-    //             // handle success
-    //             console.log(response);
-    //         })
-    //         .catch(function (error) {
-    //             // handle error
-    //             console.log(error);
-    //         })
-    //         .then(function () {
-    //             // always executed
-    //         });
-    // };
-
     return (
         <>
             <MyNavbar />

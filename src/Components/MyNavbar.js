@@ -8,7 +8,7 @@ export default function MyNavbar() {
             <Container className="bg bg-transparent fw-bold">
                 <Navbar.Brand href="#home">
                     <img
-                        alt=""
+                        alt="Cat Steve's Logo"
                         src="./img/CatSteves.png"
                         width="200"
                         height="200"
