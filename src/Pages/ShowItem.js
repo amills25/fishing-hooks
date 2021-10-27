@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 //pull individual product when clicked on view item and add it to card to display here
@@ -9,20 +9,40 @@ export default function Item(props) {
 
     return (
         <>
-            <Card>
-                <Card.Body>
-                    <Card.Img variant="top" src={oneItem?.image} />
-                    <Card.Title>{oneItem?.name}</Card.Title>
-                    <Card.Subtitle>{oneItem?.price}</Card.Subtitle>
-                    <Card.Text>{oneItem?.description}</Card.Text>
-                    <Button
-                        onClick={() => props.addToCart(oneItem.id)}
-                        variant="flush"
-                    >
-                        Add to Cart
-                    </Button>
-                </Card.Body>
-            </Card>
+            <Container>
+                <Row>
+                    <Col className="text-center display-2 fw-bold">
+                        {oneItem?.name}
+                    </Col>
+                </Row>
+            </Container>
+            <br></br>
+            <Container>
+                <Row
+                    xs={1}
+                    md={3}
+                    className="g-4 d-flex justify-content-center"
+                >
+                    <Col>
+                        <Card className="h-100">
+                            <Card.Body>
+                                <Card.Img variant="top" src={oneItem?.image} />
+                                <Card.Title>{oneItem?.name}</Card.Title>
+                                <Card.Subtitle>${oneItem?.price}</Card.Subtitle>
+                                <Card.Text>{oneItem?.description}</Card.Text>
+                                <Button
+                                    onClick={() => props.addToCart(oneItem.id)}
+                                    variant="flush"
+                                >
+                                    Add to Cart
+                                </Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+            <br></br>
+            <br></br>
         </>
     );
 }

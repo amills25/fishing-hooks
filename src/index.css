@@ -5,7 +5,23 @@ body {
     background-repeat: no-repeat;
     background-image: linear-gradient(
         to left,
-        rgba(118, 149, 252, 0.7),
+        rgba(118, 149, 252),
+        rgb(153, 235, 238)
+    );
+}
+
+.myCard {
+    padding: 10px;
+}
+
+.myNav {
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+        to left,
+        rgba(118, 149, 252),
         rgb(153, 235, 238)
     );
 }

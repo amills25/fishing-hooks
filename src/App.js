@@ -31,6 +31,7 @@ export default function App() {
         setCartArray((prevCart) => {
             const found = products.find((item) => item.id === id);
             //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
+
             return [...prevCart, found];
         });
     };

@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 export default function MyNavbar(props) {
     console.log(props);
     return (
-        <Navbar>
-            <Container className="bg bg-transparent fw-bold">
+        <Navbar sticky="top" className="myNav">
+            <Container className="bg bg-transparent fs-5 fw-bold">
                 <Navbar.Brand as={Link} to="/home">
                     <img
                         alt="Cat Steve's Logo"
                         src="./img/CatSteves.png"
-                        width="200"
-                        height="200"
+                        width="210"
+                        height="140"
                         className="d-inline-block align-top"
                     />{" "}
                 </Navbar.Brand>

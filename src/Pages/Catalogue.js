@@ -11,21 +11,34 @@ export default function Catalogue(props) {
     return (
         <>
             <Container>
+                <Row>
+                    <Col className="text-center display-2 fw-bold">
+                        OUR PRODUCTS
+                    </Col>
+                </Row>
+            </Container>
+            <br></br>
+            <Container>
                 <Row xs={1} md={4} className="g-4">
                     {props.products.map((product, idx) => (
                         <Col key={idx}>
-                            <Card>
-                                <Card.Img variant="top" src={product.image} />
+                            <Card className="h-100">
+                                <Card.Img
+                                    className="myCard"
+                                    variant="top"
+                                    src={product.image}
+                                />
                                 <Card.Body>
-                                    <Card.Title>{product.name}</Card.Title>
+                                    <Card.Title>{product.name}</Card.Title>{" "}
                                     <Card.Subtitle>
-                                        {product.price}
+                                        ${product.price}
                                     </Card.Subtitle>
                                     <Card.Text>{product.description}</Card.Text>
                                     <Button
                                         as={Link}
                                         to={`/item/${product.id}`}
                                         variant="flush"
+                                        // className="card-bottom"
                                     >
                                         View Item
                                     </Button>{" "}
@@ -34,6 +47,7 @@ export default function Catalogue(props) {
                                             props.addToCart(product.id)
                                         }
                                         variant="flush"
+                                        // className="card-bottom"
                                     >
                                         Add to Cart
                                     </Button>
