@@ -23,31 +23,33 @@ export default function Catalogue(props) {
                                     variant="top"
                                     src={product.image}
                                 />
-                                <Card.Body>
+                                <Card.Body className="cardAlign">
                                     <Card.Title>{product.name}</Card.Title>{" "}
                                     <Card.Subtitle>
                                         ${product.price}
                                     </Card.Subtitle>
                                     {/* <Card.Text>{product.description}</Card.Text> */}
                                     <br></br>
-                                    <Button
-                                        as={Link}
-                                        to={`/item/${product.id}`}
-                                        variant="flush"
-                                        // className="card-bottom"
-                                    >
-                                        View Item
-                                    </Button>
-                                    {" || "}
-                                    <Button
-                                        onClick={() =>
-                                            props.addToCart(product.id)
-                                        }
-                                        variant="flush"
-                                        // className="card-bottom"
-                                    >
-                                        Add to Cart
-                                    </Button>
+                                    <div>
+                                        <Button
+                                            as={Link}
+                                            to={`/item/${product.id}`}
+                                            variant="flush"
+                                            // className="card-bottom"
+                                        >
+                                            View Item
+                                        </Button>
+                                        {" || "}
+                                        <Button
+                                            onClick={() =>
+                                                props.addToCart(product.id)
+                                            }
+                                            variant="flush"
+                                            // className="card-bottom"
+                                        >
+                                            Add to Cart
+                                        </Button>
+                                    </div>
                                 </Card.Body>
                             </Card>
                         </Col>

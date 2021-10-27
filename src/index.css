@@ -10,6 +10,11 @@ body {
     );
 }
 
+.cardAlign {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
 .myCard {
     padding: 10px;
 }
