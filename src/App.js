@@ -27,10 +27,20 @@ export default function App() {
     useEffect(callAPI, []);
 
     const [cartArray, setCartArray] = useState([]);
-    // const addToCart = () => {
-    //     setCartArray(cartArray);
-    // };
-    // useEffect(addToCart, [cartArray]);
+    const addToCart = (id) => {
+        setCartArray((prevCart) => {
+            const found = products.find((item) => item.id === id);
+            //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
+            return [...prevCart, found];
+        });
+    };
+    const removeFromCart = (id) => {
+        setCartArray((prevCart) => {
+            const found = products.find((item) => item.id === id);
+            //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
+            return [...prevCart, found];
+        });
+    };
 
     return (
         <>
@@ -43,14 +53,23 @@ export default function App() {
                     {/* current page */}
                     <Switch>
                         <Route path="/catalogue">
-                            <Catalogue products={products} />
+                            <Catalogue
+                                products={products}
+                                addToCart={addToCart}
+                            />
                         </Route>
                         <Route path="/item/:id">
-                            <ShowItem products={products} />
+                            <ShowItem
+                                products={products}
+                                addToCart={addToCart}
+                            />
                         </Route>
                         <Route path="/login">{/* <Login /> */}</Route>
                         <Route path="/Cart">
-                            <Cart />
+                            <Cart
+                                cartArray={cartArray}
+                                removeFromCart={removeFromCart}
+                            />
                         </Route>
                         <Route path={["/", "*"]}>
                             <Home />

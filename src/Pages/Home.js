@@ -1,7 +1,5 @@
 import React from "react";
-import { Carousel, Image } from "react-bootstrap";
-import MyNavbar from "../Components/MyNavbar";
-
+import { Carousel } from "react-bootstrap";
 export default function Home() {
     return (
         <>

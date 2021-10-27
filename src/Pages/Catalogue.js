@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import MyNavbar from "../Components/MyNavbar";
 import { Link } from "react-router-dom";
 
 export default function Catalogue(props) {
-    const addToCart = () => {
-        props.setCartArray(props.cartArray);
-    };
-    useEffect(addToCart, [props.cartArray]);
-    console.log(addToCart);
+    // const addToCart = () => {
+    //     props.setCartArray(props.cartArray);
+    // };
+    // useEffect(addToCart, [props.cartArray]);
+    // console.log(addToCart);
     return (
         <>
             <Container>
@@ -30,7 +29,12 @@ export default function Catalogue(props) {
                                     >
                                         View Item
                                     </Button>{" "}
-                                    <Button onClick={addToCart} variant="flush">
+                                    <Button
+                                        onClick={() =>
+                                            props.addToCart(product.id)
+                                        }
+                                        variant="flush"
+                                    >
                                         Add to Cart
                                     </Button>
                                 </Card.Body>
