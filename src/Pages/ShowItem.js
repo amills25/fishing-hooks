@@ -10,7 +10,6 @@ export default function Item(props) {
 
     return (
         <>
-            <MyNavbar />
             <Card>
                 <Card.Body>
                     <Card.Img variant="top" src={oneItem?.image} />

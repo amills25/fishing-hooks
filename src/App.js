@@ -1,4 +1,5 @@
 import axios from "axios";
+import MyNavbar from "../src/Components/MyNavbar";
 import Home from "../src/Pages/Home";
 import Catalogue from "../src/Pages/Catalogue";
 import ShowItem from "./Pages/ShowItem";
@@ -7,9 +8,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
-    const [cartArray, setCartArray] = useState([]);
-    // const [singleItem, setSingleItem] = useState([]);
-
     const [products, setProducts] = useState([]);
     const callAPI = () => {
         axios
@@ -19,7 +17,6 @@ export default function App() {
             .then((response) => {
                 // handle success
                 setProducts(response.data);
-                // <Catalogue key={product.data} product={product} />;
                 console.log(response);
             })
             .catch(function (error) {
@@ -29,29 +26,38 @@ export default function App() {
     };
     useEffect(callAPI, []);
 
+    const [cartArray, setCartArray] = useState([]);
+    // const addToCart = () => {
+    //     setCartArray(cartArray);
+    // };
+    // useEffect(addToCart, [cartArray]);
+
     return (
-        <Router>
-            <div>
-                {/* A <Switch> looks through its children <Route>s and
+        <>
+            <Router>
+                <MyNavbar cartArray={cartArray} />
+                <div>
+                    {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
 
-                {/* current page */}
-                <Switch>
-                    <Route path="/catalogue">
-                        <Catalogue products={products} />
-                    </Route>
-                    <Route path="/item/:id">
-                        <ShowItem products={products} />
-                    </Route>
-                    <Route path="/login">{/* <Login /> */}</Route>
-                    <Route path="/Cart">
-                        <Cart />
-                    </Route>
-                    <Route path={["/", "*"]}>
-                        <Home />
-                    </Route>
-                </Switch>
-            </div>
-        </Router>
+                    {/* current page */}
+                    <Switch>
+                        <Route path="/catalogue">
+                            <Catalogue products={products} />
+                        </Route>
+                        <Route path="/item/:id">
+                            <ShowItem products={products} />
+                        </Route>
+                        <Route path="/login">{/* <Login /> */}</Route>
+                        <Route path="/Cart">
+                            <Cart />
+                        </Route>
+                        <Route path={["/", "*"]}>
+                            <Home />
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
+        </>
     );
 }

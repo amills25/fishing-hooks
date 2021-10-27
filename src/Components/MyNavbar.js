@@ -2,7 +2,8 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function MyNavbar() {
+export default function MyNavbar(props) {
+    console.log(props);
     return (
         <Navbar>
             <Container className="bg bg-transparent fw-bold">
@@ -24,7 +25,7 @@ export default function MyNavbar() {
                         Products
                     </Nav.Link>
                     <Nav.Link activeClassName={"active"} as={Link} to="/Cart">
-                        Cart: 0 Items
+                        {`Cart: ${props.cartArray.length} Items`}
                     </Nav.Link>
                 </Nav>
                 <Navbar.Toggle />

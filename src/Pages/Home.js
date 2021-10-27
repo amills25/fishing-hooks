@@ -5,7 +5,6 @@ import MyNavbar from "../Components/MyNavbar";
 export default function Home() {
     return (
         <>
-            <MyNavbar />
             <Carousel>
                 <Carousel.Item>
                     <img
