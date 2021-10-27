@@ -38,7 +38,7 @@ export default function MyNavbar(props) {
                         <Nav.Link
                             activeClassName={"active"}
                             as={Link}
-                            to="/Login"
+                            to="/login"
                         >
                             Logout
                         </Nav.Link>

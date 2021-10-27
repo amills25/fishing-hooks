@@ -35,11 +35,13 @@ export default function App() {
         });
     };
     const removeFromCart = (id) => {
-        setCartArray((prevCart) => {
-            const found = products.find((item) => item.id === id);
-            //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
-            return [...prevCart, found];
+        let newCart = cartArray.filter((item, i) => {
+            if (item.id !== id) {
+                return item;
+            }
         });
+        setCartArray(newCart);
+        //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
     };
 
     return (
