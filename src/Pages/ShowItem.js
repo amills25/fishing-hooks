@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
 
 //pull individual product when clicked on view item and add it to card to display here
-export default function Item() {
+export default function Item(props) {
     return (
         <>
             <MyNavbar />

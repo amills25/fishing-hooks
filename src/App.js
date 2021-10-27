@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export default function App() {
     const [cartArray, setCartArray] = useState([]);
 
-    const [product, setProduct] = useState([]);
+    const [products, setProducts] = useState([]);
     // const [image, setImage] = useState("image url");
     // const [name, setName] = useState("Bait or Tackle Item");
     // const [price, setPrice] = useState("5");
@@ -21,8 +21,8 @@ export default function App() {
             )
             .then((response) => {
                 // handle success
-                setProduct(response.data);
-                <Catalogue key={product.data} product={product} />;
+                setProducts(response.data);
+                // <Catalogue key={product.data} product={product} />;
                 console.log(response);
             })
             .catch(function (error) {
@@ -41,7 +41,7 @@ export default function App() {
                 {/* current page */}
                 <Switch>
                     <Route path="/catalogue">
-                        <Catalogue />
+                        <Catalogue products={products} />
                     </Route>
                     <Route path="/item">
                         <ShowItem />

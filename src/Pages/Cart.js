@@ -4,7 +4,7 @@ import MyNavbar from "../Components/MyNavbar";
 import { Link } from "react-router-dom";
 
 //pull individual product when added to cart and add it to cart array to display here
-export default function Cart() {
+export default function Cart(props) {
     return (
         <>
             <MyNavbar />
