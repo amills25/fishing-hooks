@@ -1,35 +1,26 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import MyNavbar from "../Components/MyNavbar";
+import { useParams } from "react-router-dom";
 
 //pull individual product when clicked on view item and add it to card to display here
 export default function Item(props) {
+    const { id } = useParams();
+    const oneItem = props.products.find((item) => item.id === parseInt(id));
+
     return (
         <>
             <MyNavbar />
-            <Container>
-                <Row xs={1} md={4} className="g-4">
-                    {Array.from({ length: 1 }).map((_, idx) => (
-                        <Col>
-                            <Card>
-                                <Card.Body>
-                                    <Card.Title>
-                                        Product Name from API
-                                    </Card.Title>
-                                    <Card.Subtitle>
-                                        Product Price from API
-                                    </Card.Subtitle>
-                                    <Card.Text>
-                                        Product Description from API
-                                    </Card.Text>
-                                    {/* onClick={addToCart} */}
-                                    <Button variant="flush">Add to Cart</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
+            <Card>
+                <Card.Body>
+                    <Card.Img variant="top" src={oneItem?.image} />
+                    <Card.Title>{oneItem?.name}</Card.Title>
+                    <Card.Subtitle>{oneItem?.price}</Card.Subtitle>
+                    <Card.Text>{oneItem?.description}</Card.Text>
+                    {/* onClick={addToCart} */}
+                    <Button variant="flush">Add to Cart</Button>
+                </Card.Body>
+            </Card>
         </>
     );
 }

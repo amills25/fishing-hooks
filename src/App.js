@@ -4,16 +4,13 @@ import Catalogue from "../src/Pages/Catalogue";
 import ShowItem from "./Pages/ShowItem";
 import Cart from "../src/Pages/Cart";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
     const [cartArray, setCartArray] = useState([]);
+    // const [singleItem, setSingleItem] = useState([]);
 
     const [products, setProducts] = useState([]);
-    // const [image, setImage] = useState("image url");
-    // const [name, setName] = useState("Bait or Tackle Item");
-    // const [price, setPrice] = useState("5");
-    // const [description, setDescription] = useState("This item helps me fish");
     const callAPI = () => {
         axios
             .get(
@@ -43,8 +40,8 @@ export default function App() {
                     <Route path="/catalogue">
                         <Catalogue products={products} />
                     </Route>
-                    <Route path="/item">
-                        <ShowItem />
+                    <Route path="/item/:id">
+                        <ShowItem products={products} />
                     </Route>
                     <Route path="/login">{/* <Login /> */}</Route>
                     <Route path="/Cart">

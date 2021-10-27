@@ -10,19 +10,19 @@ export default function Cart(props) {
             <MyNavbar />
             <Container>
                 <Row xs={1} md={4} className="g-4">
-                    {Array.from({ length: 1 }).map((_, idx) => (
+                    {props.cartArray.map((product, idx) => (
                         <Col>
                             <Card>
                                 <Card.Body>
-                                    <Card.Title>
-                                        Product Name from API
-                                    </Card.Title>
+                                    <Card.Img
+                                        variant="top"
+                                        src={product.image}
+                                    />
+                                    <Card.Title>{product.name}</Card.Title>
                                     <Card.Subtitle>
-                                        Product Price from API
+                                        {product.price}
                                     </Card.Subtitle>
-                                    <Card.Text>
-                                        Product Description from API
-                                    </Card.Text>
+                                    <Card.Text>{product.description}</Card.Text>
                                     <Button
                                         as={Link}
                                         to="/item"

@@ -4,6 +4,10 @@ import MyNavbar from "../Components/MyNavbar";
 import { Link } from "react-router-dom";
 
 export default function Catalogue(props) {
+    const addToCart = () => {
+        props.setCartArray(props.cartArray);
+    };
+    console.log(addToCart);
     return (
         <>
             <MyNavbar />
@@ -21,13 +25,14 @@ export default function Catalogue(props) {
                                     <Card.Text>{product.description}</Card.Text>
                                     <Button
                                         as={Link}
-                                        to="/item"
+                                        to={`/item/${product.id}`}
                                         variant="flush"
                                     >
                                         View Item
                                     </Button>{" "}
-                                    {/* onClick={addToCart} */}
-                                    <Button variant="flush">Add to Cart</Button>
+                                    <Button onClick={addToCart} variant="flush">
+                                        Add to Cart
+                                    </Button>
                                 </Card.Body>
                             </Card>
                         </Col>
