@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+
 export default function Home() {
     return (
         <>
@@ -10,6 +11,7 @@ export default function Home() {
                         src="./img/rod.png"
                         alt="Fishing Rod"
                     />
+                    <br></br>
                     <Carousel.Caption>
                         <h3 className="text-dark">Rods</h3>
                         <p className="text-dark">We sell fishing rods!</p>

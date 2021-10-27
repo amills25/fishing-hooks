@@ -14,6 +14,10 @@ body {
     padding: 10px;
 }
 
+.myImage {
+    max-height: 100px;
+}
+
 .myNav {
     background-position: center;
     background-size: cover;

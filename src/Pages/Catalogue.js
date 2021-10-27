@@ -3,11 +3,6 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Catalogue(props) {
-    // const addToCart = () => {
-    //     props.setCartArray(props.cartArray);
-    // };
-    // useEffect(addToCart, [props.cartArray]);
-    // console.log(addToCart);
     return (
         <>
             <Container>
@@ -18,7 +13,7 @@ export default function Catalogue(props) {
                 </Row>
             </Container>
             <br></br>
-            <Container>
+            <Container className="text-center">
                 <Row xs={1} md={4} className="g-4">
                     {props.products.map((product, idx) => (
                         <Col key={idx}>
@@ -33,7 +28,8 @@ export default function Catalogue(props) {
                                     <Card.Subtitle>
                                         ${product.price}
                                     </Card.Subtitle>
-                                    <Card.Text>{product.description}</Card.Text>
+                                    {/* <Card.Text>{product.description}</Card.Text> */}
+                                    <br></br>
                                     <Button
                                         as={Link}
                                         to={`/item/${product.id}`}
@@ -41,7 +37,8 @@ export default function Catalogue(props) {
                                         // className="card-bottom"
                                     >
                                         View Item
-                                    </Button>{" "}
+                                    </Button>
+                                    {" || "}
                                     <Button
                                         onClick={() =>
                                             props.addToCart(product.id)
@@ -57,6 +54,7 @@ export default function Catalogue(props) {
                     ))}
                 </Row>
             </Container>
+            <br></br>
         </>
     );
 }

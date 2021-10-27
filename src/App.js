@@ -26,13 +26,25 @@ export default function App() {
     };
     useEffect(callAPI, []);
 
-    const [cartArray, setCartArray] = useState([]);
+    const [cartArray, setCartArray] = useState(
+        JSON.parse(localStorage.getItem("cartArray")) || []
+    );
     const addToCart = (id) => {
         setCartArray((prevCart) => {
+            //find index of a cart item, if there isn't one, skip the if, but if it already exists, then we're adding to the current quantity by cloning the cartArray
+            const cartItemIndex = cartArray.findIndex((item) => item.id === id);
+            if (cartItemIndex !== -1) {
+                const foundCartItem = cartArray[cartItemIndex];
+                const newCartState = [...prevCart];
+                newCartState[cartItemIndex] = {
+                    ...foundCartItem,
+                    quantity: foundCartItem.quantity + 1,
+                };
+                return newCartState;
+            }
             const found = products.find((item) => item.id === id);
-            //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
-
-            return [...prevCart, found];
+            const cartItem = { ...found, quantity: 1 };
+            return [...prevCart, cartItem];
         });
     };
     const removeFromCart = (id) => {
@@ -42,8 +54,10 @@ export default function App() {
             }
         });
         setCartArray(newCart);
-        //to do: don't add new found item every time if one already exists in the cart, increment value in cart object
     };
+    useEffect(() => {
+        localStorage.setItem("cartArray", JSON.stringify(cartArray));
+    }, [cartArray]);
 
     return (
         <>

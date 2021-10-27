@@ -3,7 +3,12 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function MyNavbar(props) {
-    console.log(props);
+    let totalQuantity = 0;
+    //for every item in the cartArray, we'll add it's quantity to the total quantity
+    props.cartArray.forEach((cartItem) => {
+        totalQuantity = totalQuantity + cartItem.quantity;
+    });
+
     return (
         <Navbar sticky="top" className="myNav">
             <Container className="bg bg-transparent fs-5 fw-bold">
@@ -25,7 +30,7 @@ export default function MyNavbar(props) {
                         Products
                     </Nav.Link>
                     <Nav.Link activeClassName={"active"} as={Link} to="/Cart">
-                        {`Cart: ${props.cartArray.length} Items`}
+                        Cart: {totalQuantity} Items
                     </Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
@@ -33,7 +38,7 @@ export default function MyNavbar(props) {
                     <Navbar.Text>
                         Welcome, <a href="#login">Andrew Mills</a>
                     </Navbar.Text>
-                    {"||"}
+                    <span style={{ paddingLeft: 8 }}></span>
                     <Nav>
                         <Nav.Link
                             activeClassName={"active"}

@@ -2,7 +2,6 @@ import React from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
-//pull individual product when clicked on view item and add it to card to display here
 export default function Item(props) {
     const { id } = useParams();
     const oneItem = props.products.find((item) => item.id === parseInt(id));
@@ -17,7 +16,7 @@ export default function Item(props) {
                 </Row>
             </Container>
             <br></br>
-            <Container>
+            <Container className="text-center">
                 <Row
                     xs={1}
                     md={3}
@@ -41,7 +40,6 @@ export default function Item(props) {
                     </Col>
                 </Row>
             </Container>
-            <br></br>
             <br></br>
         </>
     );
