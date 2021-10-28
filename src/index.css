@@ -10,6 +10,14 @@ body {
     );
 }
 
+.row-bordered {
+    border-bottom: 1px solid;
+}
+
+.row-bordered:first-child {
+    border-top: 1px solid;
+}
+
 .cardAlign {
     display: grid;
     grid-template-rows: auto 1fr auto;
