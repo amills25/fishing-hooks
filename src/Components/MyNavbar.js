@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function MyNavbar(props) {
     let totalQuantity = 0;
-    //for every item in the cartArray, we'll add it's quantity to the total quantity
+
     props.cartArray.forEach((cartItem) => {
         totalQuantity = totalQuantity + cartItem.quantity;
     });

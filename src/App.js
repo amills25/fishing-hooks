@@ -31,7 +31,6 @@ export default function App() {
     );
     const addToCart = (id) => {
         setCartArray((prevCart) => {
-            //find index of a cart item, if there isn't one, skip the if, but if it already exists, then we're adding to the current quantity by cloning the cartArray
             const cartItemIndex = cartArray.findIndex((item) => item.id === id);
             if (cartItemIndex !== -1) {
                 const foundCartItem = cartArray[cartItemIndex];
