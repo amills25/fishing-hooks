@@ -25,7 +25,7 @@ export default function Cart(props) {
                                 ></Image>
                             </Col>
                             <Col>
-                                <div className="fw-bold">{product.name}</div>{" "}
+                                <div className="fw-bold">{product.name}</div>
                                 <br></br> Quantity: {product.quantity}
                             </Col>
                             <Col>
@@ -57,8 +57,9 @@ export default function Cart(props) {
                     </Row>
                 </Container>
             ) : (
-                <Container className="display-2 text-center">
-                    Your cart is empty.
+                <Container className="display-5 text-center">
+                    <br></br>
+                    YOUR CART IS EMPTY.
                 </Container>
             )}
             <br></br>
