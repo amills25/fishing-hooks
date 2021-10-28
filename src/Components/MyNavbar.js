@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export default function MyNavbar(props) {
     let totalQuantity = 0;
@@ -12,7 +12,7 @@ export default function MyNavbar(props) {
     return (
         <Navbar sticky="top" className="myNav">
             <Container className="bg bg-transparent fs-5 fw-bold">
-                <Navbar.Brand as={Link} to="/home">
+                <Navbar.Brand as={NavLink} to="/home">
                     <img
                         alt="Cat Steve's Logo"
                         src="./img/CatSteves.png"
@@ -24,12 +24,16 @@ export default function MyNavbar(props) {
                 <Nav className="me-auto">
                     <Nav.Link
                         activeClassName={"active"}
-                        as={Link}
+                        as={NavLink}
                         to="/catalogue"
                     >
                         Products
                     </Nav.Link>
-                    <Nav.Link activeClassName={"active"} as={Link} to="/Cart">
+                    <Nav.Link
+                        activeClassName={"active"}
+                        as={NavLink}
+                        to="/Cart"
+                    >
                         Cart: {totalQuantity} Items
                     </Nav.Link>
                 </Nav>
@@ -42,7 +46,7 @@ export default function MyNavbar(props) {
                     <Nav>
                         <Nav.Link
                             activeClassName={"active"}
-                            as={Link}
+                            as={NavLink}
                             to="/login"
                         >
                             Logout

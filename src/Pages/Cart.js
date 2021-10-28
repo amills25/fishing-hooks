@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, Image } from "react-bootstrap";
+import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Cart(props) {
