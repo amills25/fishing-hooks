@@ -50,10 +50,7 @@ export default function Cart(props) {
                     ))}
                     <Row>
                         <Col className="text-center display-2">
-                            <Button
-                                variant="dark"
-                                // onClick={() => props.removeFromCart(product.id)}
-                            >
+                            <Button as={Link} to="/shipping" variant="dark">
                                 CHECKOUT
                             </Button>
                         </Col>

@@ -81,13 +81,15 @@ export default function App() {
                                 addToCart={addToCart}
                             />
                         </Route>
-                        <Route path="/login">{/* <Login /> */}</Route>
                         <Route path="/Cart">
                             <Cart
                                 cartArray={cartArray}
                                 removeFromCart={removeFromCart}
                             />
                         </Route>
+                        {/* <Route path="/login"><Login /></Route> */}
+                        {/* <Route path="/shipping"><Shipping /></Route> */}
+                        {/* <Route path="/billing"><Billing /></Route> */}
                         <Route path={["/", "*"]}>
                             <Home />
                         </Route>
