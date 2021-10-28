@@ -25,7 +25,7 @@ export default function Cart(props) {
                                 ></Image>
                             </Col>
                             <Col>
-                                {product.name} <br></br>
+                                <div className="fw-bold">{product.name}</div>{" "}
                                 <br></br> Quantity: {product.quantity}
                             </Col>
                             <Col>

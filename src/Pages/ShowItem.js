@@ -31,7 +31,7 @@ export default function Item(props) {
                                 <Card.Text>{oneItem?.description}</Card.Text>
                                 <Button
                                     onClick={() => props.addToCart(oneItem.id)}
-                                    variant="flush"
+                                    variant="outline-dark"
                                 >
                                     Add to Cart
                                 </Button>
