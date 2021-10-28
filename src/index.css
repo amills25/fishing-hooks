@@ -5,7 +5,9 @@ body {
     background-repeat: no-repeat;
     background-image: linear-gradient(
         to left,
-        rgba(118, 149, 252),
+        rgb(110, 166, 250),
+        rgb(153, 235, 238),
+        rgb(110, 166, 250),
         rgb(153, 235, 238)
     );
 }
@@ -38,7 +40,9 @@ body {
     background-repeat: no-repeat;
     background-image: linear-gradient(
         to left,
-        rgba(118, 149, 252),
+        rgba(110, 166, 250),
+        rgb(153, 235, 238),
+        rgb(110, 166, 250),
         rgb(153, 235, 238)
     );
 }
